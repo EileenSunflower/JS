@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Star(name,age,sex){
+            this.name=name;
+            this.age=age;
+            this.sex=sex;
+            this.sing=function(song){
+                console.log(name+'唱了'+song);
+            }
+        }
+        var s=new Star('刘德华',40,'男');
+        console.log(s.age);
+        console.log(s['sex'])
+        var s1=new Star('张学友',40,'男');
+        console.log(s1.sex)
+        s.sing('恭喜发财');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
