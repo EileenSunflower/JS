@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            position: relative;
+            width: 400px;
+            border: 1px solid pink;
+            margin: 100px auto;
+        }
+        input{
+            width: 370px;
+            height: 30px;
+            border: 0px;
+            outline: none;
+        }
+        #img{
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <label for="">
+            <img src="./images/close.png" alt="" id="img">
+        </label>
+        <input type="password" id="psw">
+        <script>
+            var img=document.getElementById('img')
+            var psw=document.getElementById('psw')
+            flag=0;
+                img.onclick=function(){
+                    if(flag==0){
+                    psw.type='text'
+                    flag=1
+                    img.src='./images/open.png'
+                }else{
+                psw.type='password'
+                flag=0
+                img.src='./images/close.png'
+            }
+            }
+        </script>
+    </div>
+</body>
+</html>

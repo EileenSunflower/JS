@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d1{
+            width: 300px;
+            height: 30px;
+            background-color: pink;
+            margin-bottom: 10px;
+        }
+        .d2{
+            width: 300px;
+            height: 30px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">修改内容</button>
+    <div class="d1">内容1</div>
+    <div class="d2">内容2</div>
+    <script>
+        var btn=document.querySelector('#btn')
+        var d1=document.querySelector('.d1')
+        var d2=document.querySelector('.d2')
+        btn.onclick=function(){
+            d2.innerText=getDate()
+        }
+        function getDate(){
+            var date=new Date()
+            var Year=date.getFullYear()
+            var Month=date.getMonth()+1
+            var dates=date.getDate()
+            // console.log(dates)
+            var arr=['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+            var Day=date.getDay()
+            // console.log(Day)
+            return '今天是：'+Year+'年'+Month+'月'+dates+'日'+arr[Day];
+        }
+    </script>
+</body>
+</html>

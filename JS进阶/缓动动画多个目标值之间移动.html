@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: absolute;
+            left: 0;
+            top: 300px;
+            height: 150px;
+            width: 150px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn500">移动到500</button>
+    <button class="btn900">移动到900</button>
+    <div></div>
+    <script>
+        var btn500=document.querySelector('.btn500')
+        var btn900=document.querySelector('.btn900')
+        var div=document.querySelector('div')
+        
+        function animate(obj,target){
+            clearInterval(obj.timer)
+            obj.timer=setInterval(function(){
+                var step=(target-obj.offsetLeft)/10
+                step=step>0?Math.ceil(step):Math.floor(step)
+                if(obj.offsetLeft==target){
+                    clearInterval(obj.timer)
+                }else{
+                    obj.style.left=obj.offsetLeft+step+'px'
+                }
+            },20)
+        }
+
+        btn500.addEventListener('click',function(){
+            animate(div,500)
+        })
+        btn900.addEventListener('click',function(){
+            animate(div,900)
+        })
+    </script>
+</body>
+</html>

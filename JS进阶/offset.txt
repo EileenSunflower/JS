@@ -1,0 +1,3 @@
+offsetTop：返回元素相对带有定位父元素上方的偏移量
+offsetLeft：返回元素相对带有定位父元素左边框的偏移量
+offsetWidth：padding、边框、内容区的宽度
