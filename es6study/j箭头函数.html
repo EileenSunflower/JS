@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // this指向是静态的
+        function getName(){
+            console.log(this.name)
+        }
+        let getName1=()=>{
+            console.log(this.name)
+        }
+        window.name='李华'
+        const namm={
+            name:'改变'
+        }
+        getName()
+        getName1()
+
+        getName.call(namm)
+        getName1.call(namm)
+    </script>
+</body>
+</html>

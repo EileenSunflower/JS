@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const p=new Promise(function(resolve,reject){
+            setTimeout(function(){
+                //let data='数据库中的数据'
+                //resolve(data)//调用成功转到then函数的第一个函数中data数据传给value
+
+                let err='数据读取失败'
+                reject(err)//调用失败转到then函数的第二个函数中err数据传给reason
+            },1000)
+        })
+        p.then(function(value){
+            console.log(value)
+        },//调用resolve成功后
+        function(reason){
+            console.error(reason)
+        })//调用reject失败后
+    </script>
+</body>
+</html>
