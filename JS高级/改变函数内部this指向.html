@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <script>
+        // 1.call
+        // var o={
+        //     name:'li'
+        // }
+        // function fn(a,b){
+        //     console.log(this)
+        //     console.log(a+b)
+        // }
+        // fn.call(o,1,2)
+
+        // function Father(name,age){
+        //     this.name=name
+        //     this.age=age
+        // }
+        // function Son(name,age){
+        //     Father.call(this,name,age)
+        // }
+        // var son=new Son('l',20)
+        // console.log(son)
+
+
+        // 2.apply
+        // var o=['red','pink']
+        // function ff(arr){
+        //     console.log(this)
+        //     console.log(arr)
+        // }
+        // ff.apply(o,['black'])
+        // var arr=[1,5,99,2]
+        // var max=Math.max.apply(Math,arr)
+        // console.log(max)
+
+
+        // 3.bind
+        // var o={
+        //     name:'ll'
+        // }
+        // function fn(a,b){
+        //     console.log(this)
+        //     console.log(a+b)
+        // }
+        // var f=fn.bind(o,1,2)
+        // f()
+
+
+        var btn=document.querySelector('button')
+        btn.onclick=function(){
+            this.disabled=true
+            setTimeout(function(){
+             this.disabled=false   
+            }.bind(this),3000)
+        }
+        
+    </script>
+</body>
+</html>

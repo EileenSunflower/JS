@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 闭包是函数。闭包可以访问另一个函数作用域的域中变量 -->
+    <script>
+        function fn(){
+            var num=10
+            function fu(){
+                console.log(num)
+            }
+            return fu
+        }
+        var f=fn()
+        f()
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Star(uname,age){
+            this.uname=uname
+            this.age=age
+        }
+        // Star.prototype.sing=function(){
+        //     console.log('方法1')
+        // }
+        // Star.prototype.movie=function(){
+        //     console.log('方法2')
+        // }
+        Star.prototype={
+            constructor:Star,
+            sing:function(){
+                console.log('方法1')
+            },
+            movie:function(){
+                console.log('方法2')
+            }
+        }
+        var lh=new Star('李华',20)
+        lh.sing()
+        lh.movie()
+        console.log(lh.__proto__)
+    </script>
+</body>
+</html>

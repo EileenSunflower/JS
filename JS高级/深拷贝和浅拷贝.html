@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 浅拷贝
+        var obj={
+            id:1,
+            name:'li',
+            msg:{
+                age:20
+            }
+        }
+        var o={}
+        for(var k in obj){
+            o[k]=obj[k]
+            // 浅拷贝到msg时仅仅拷贝了obj的msg地址给o，修改地址两个都会变
+        }
+        // console.log(o)
+        Object.assign(o,obj)
+        console.log(o)
+    </script>
+</body>
+</html>
